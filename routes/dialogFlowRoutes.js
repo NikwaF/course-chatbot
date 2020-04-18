@@ -12,13 +12,13 @@ module.exports = app => {
   });
 
   app.post('/api/df_text_query', async (req,res) => {
-    let response = await chatbot.textQuery(req.body.text, req.body.parameters);
-    res.send(response[0].queryResult); 
+    try{
+      let response = await chatbot.textQuery(req.body.text, req.body.parameters);
+      res.send(response[0].queryResult); 
+
+    } catch(err){
+      console.log(err);
+    }
   });
-  
-  app.post('/api/df_event_query', (req,res) => {
-    res.json({
-      data: 'event query'
-    })
-  });  
+ 
 }
