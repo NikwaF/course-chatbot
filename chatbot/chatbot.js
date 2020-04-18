@@ -2,10 +2,10 @@ const dialogflow = require('dialogflow');
 const config = require('../config/keys');
 const projectID = config.googleProjectID;
 const credentials = {
-  client_email: config.gogoleClientEmail,
+  client_email: config.googleClientEmail,
   private_key: config.googlePrivateKey
 }
-const sessionCLient = new dialogflow.SessionsClient({projectID, credentials});
+const sessionCLient = new dialogflow.SessionsClient({projectID : projectID, credentials: credentials});
 const sessionPath = sessionCLient.sessionPath(config.googleProjectID, config.dialogFlowSessionID);
 
 module.exports = {
