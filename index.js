@@ -4,7 +4,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
 
-require(`${__dirname}/routes/dialogFLowRoutes`)(app);
+require(`${__dirname}/routes/dialogFlowRoutes`)(app);
 
 
 
